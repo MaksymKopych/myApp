@@ -1,0 +1,6 @@
+.myInput {
+  /* height: 35px; */
+  padding: 10px;
+  margin-top: 5px;
+  flex-grow: 1;
+}

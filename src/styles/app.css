@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+body {
+  background-color: rgba(226, 225, 225, 0.772);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  background-color: white;
+  border-radius: 5px;
+  padding: 30px;
+}
+.form-contener {
+  margin-top: 20px;
+  align-items: flex-end;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.form-text {
+  font-size: 1.5rem;
+  width: auto;
+}
+.form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.contener {
+  margin: 30px;
+  max-width: 1413px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: center;
+}
+
+.err {
+  border: 1px solid red;
+}
+.users {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  /* flex-grow: 1; */
+}
+.users li {
+  flex-grow: 1;
+}
+.user {
+  display: flex;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  justify-content: space-between;
+}
+.user-box {
+  flex-grow: 1;
+}
+.user-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  margin: 20px;
+}
+.user input {
+  padding: 5px;
+  border-radius: 5px;
+}
+.user label {
+  width: 40px;
+}
+.user button {
+  width: 40px;
+  height: 40px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border: none;
+  margin: 5px;
+  border-radius: 5px;
+}
+.edit {
+  background-image: url(/images/icon-edit.svg);
+  background-color: rgba(31, 113, 227, 0.85);
+}
+.delete {
+  background-image: url(/images/icon-delete.svg);
+  background-color: rgba(119, 119, 119, 0.85);
+}
+.active {
+  background-image: url(/images/icon-edit-save.svg);
+  background-color: rgba(36, 187, 36, 0.898);
+}
+.edit:hover {
+  cursor: pointer;
+}
+.delete:hover {
+  cursor: pointer;
+}
+.active:hover {
+  cursor: pointer;
+}
