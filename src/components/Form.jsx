@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { api } from "../configuration/Response";
 import { MyBtn } from "../IU/Button/MyBtn";
 import { MyInput } from "../IU/Input/MyInput";
-import { POST } from "../configuration/POST";
+import { postUser } from "../configuration/api-servise";
 const Form = ({ create, ...props }) => {
   const [user, setUser] = useState({
     id: "",
@@ -17,8 +16,9 @@ const Form = ({ create, ...props }) => {
       id: Date.now(),
     };
     if (user.first_name && user.last_name && user.email) {
-      create(newUser);
-      POST(api, { ...user });
+      postUser({ ...user }).then((res) => {
+        create(newUser);
+      });
       setUser({
         id: "",
         first_name: "",

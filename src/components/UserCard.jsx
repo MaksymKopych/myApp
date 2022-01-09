@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { MyInput } from "../IU/Input/MyInput";
-import { api } from "../configuration/Response";
-import { PUT } from "../configuration/PUT";
-import { DELETE } from "../configuration/DELETE";
+import { deleteUser, putUser } from "../configuration/api-servise";
 function UserCard(props) {
   const [user, editUser] = useState(props.user);
   function delUser(e) {
-    DELETE(e, api, props);
+    if (e.target.closest(".delete")) {
+      e.preventDefault();
+      deleteUser(user.id).then((res) => {
+        let deleteddUser = e.target.closest("li");
+        deleteddUser.remove();
+      });
+    }
   }
   const [btn, editBtn] = useState({
     className: "edit",
@@ -29,7 +33,7 @@ function UserCard(props) {
         style: { backgroundColor: "inherit", border: "none" },
       });
       editBtn({ ...btn, className: "edit" });
-      PUT(api, { ...user });
+      putUser(user.id, { ...user });
     }
   }
 
